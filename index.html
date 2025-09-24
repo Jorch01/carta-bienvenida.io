@@ -1,577 +1,108 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carta de Bienvenida - Derecho para No Abogados</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #1B312B;
-            --primary-light: #2A4A42;
-            --primary-dark: #0F1E1A;
-            --accent-color: #D4AF37;
-            --accent-light: #F4E09C;
-            --text-dark: #2C2C2C;
-            --text-light: #6B6B6B;
-            --background: #FFFFFF;
-            --border-color: #E0E0E0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #F5F5F5;
-            padding: 2rem 1rem;
-        }
-
-        .document {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--background);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-        }
-
-        .letterhead {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .logo-left {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            background: white;
-            border-radius: 10px;
-            padding: 8px;
-        }
-
-        .letterhead-center {
-            text-align: center;
-            flex-grow: 1;
-            margin: 0 2rem;
-        }
-
-        .letterhead-center h1 {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .letterhead-center p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .logo-right {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            background: white;
-            border-radius: 10px;
-            padding: 8px;
-        }
-
-        .document-header {
-            padding: 2rem;
-            border-bottom: 2px solid var(--border-color);
-            text-align: center;
-        }
-
-        .document-title {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .course-details {
-            background: var(--accent-light);
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .course-details h3 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .document-date {
-            text-align: right;
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .letter-content {
-            padding: 2rem;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .greeting {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
-
-        .instructor-info {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            background: #F8F9FA;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-color);
-            margin: 2rem 0;
-        }
-
-        .instructor-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 3px solid var(--primary-color);
-        }
-
-        .instructor-details h4 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .instructor-details .title {
-            color: var(--accent-color);
-            font-weight: 500;
-            font-style: italic;
-        }
-
-        .paragraph {
-            margin-bottom: 1.5rem;
-            text-align: justify;
-            line-height: 1.7;
-        }
-
-        .section-header {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            margin: 2rem 0 1rem 0;
-            font-weight: 600;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .highlight-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1.5rem 0;
-        }
-
-        .highlight-section h4 {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .highlight-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .highlight-list li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .highlight-list li::before {
-            content: '✓';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .session-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .session-box {
-            border: 2px solid var(--primary-color);
-            border-radius: 8px;
-            padding: 1.5rem;
-            background: #FAFAFA;
-        }
-
-        .session-box h5 {
-            color: var(--primary-color);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .session-date {
-            color: var(--accent-color);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-            margin: 1rem 0;
-        }
-
-        .requirements-list li {
-            margin-bottom: 0.8rem;
-            padding: 0.8rem;
-            background: #F8F9FA;
-            border-left: 3px solid var(--accent-color);
-            border-radius: 0 5px 5px 0;
-        }
-
-        .requirements-list li strong {
-            color: var(--primary-color);
-        }
-
-        .meeting-info {
-            background: var(--accent-light);
-            border: 2px solid var(--accent-color);
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-
-        .meeting-info h4 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .meeting-link {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            margin: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .meeting-link:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .exercises-info {
-            background: #E8F4FD;
-            border: 2px solid #2196F3;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .exercises-info h4 {
-            color: #1565C0;
-            margin-bottom: 1rem;
-        }
-
-        .exercises-link {
-            display: inline-block;
-            background: #2196F3;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .exercises-link:hover {
-            background: #1565C0;
-        }
-
-        .closing {
-            margin-top: 3rem;
-            text-align: center;
-        }
-
-        .signature-section {
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .signature-name {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .signature-title {
-            color: var(--text-light);
-            font-style: italic;
-        }
-
-        .document-footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            border-top: 3px solid var(--accent-color);
-        }
-
-        .quote {
-            font-family: 'Crimson Text', serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-        }
-
-        .postscript {
-            margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem 0.5rem;
-            }
-            
-            .letterhead {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .letterhead-center {
-                margin: 0;
-            }
-            
-            .session-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .instructor-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .letter-content {
-                padding: 1.5rem;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .document {
-                box-shadow: none;
-                border: none;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="document">
-        <!-- Membrete del despacho -->
-        <header class="letterhead">
-            <img src="https://i.postimg.cc/63sLfFvZ/Captura-de-pantalla-2025-09-08-a-la-s-1-39-24-p-m.png" alt="Logo Empírica Legal Lab" class="logo-left">
-            <div class="letterhead-center">
-                <h1>EMPÍRICA LEGAL LAB</h1>
-                <p>Formación jurídica accesible para todos</p>
-            </div>
-            <img src="https://i.postimg.cc/g0LHRGnd/Captura-de-pantalla-2025-09-08-a-la-s-1-39-37-p-m.png" alt="Sello del despacho" class="logo-right">
-        </header>
-
-        <!-- Encabezado del documento -->
-        <div class="document-header">
-            <h1 class="document-title">CARTA DE BIENVENIDA</h1>
-            <div class="course-details">
-                <h3>Curso: Derecho para No Abogados</h3>
-                <p><strong>Fechas:</strong> 9 y 11 de septiembre de 2024 | <strong>Horario:</strong> 20:00 - 22:00 hrs | <strong>Modalidad:</strong> En línea</p>
-            </div>
-            <div class="document-date">
-                Cancún, Quintana Roo, México<br>
-                Septiembre 2024
-            </div>
-        </div>
-
-        <!-- Contenido de la carta -->
-        <div class="letter-content">
-            <div class="greeting">
-                <strong>Estimado(a) participante:</strong>
-            </div>
-
-            <div class="instructor-info">
-                <img src="https://i.postimg.cc/Kvhw8spR/foto-resume-cv-HD.jpg" alt="Mtro. Jorge Israel Clemente Marié" class="instructor-photo">
-                <div class="instructor-details">
-                    <h4>Mtro. Jorge Israel Clemente Marié</h4>
-                    <p class="title">Maestro en Amparo</p>
-                    <p>Tu instructor y guía en el mundo del derecho práctico</p>
-                </div>
-            </div>
-
-            <p class="paragraph">
-                ¡Bienvenido(a) al curso "Derecho para No Abogados"! Me da mucho gusto que hayas decidido invertir estas 4 horas en algo que transformará la manera en que entiendes y enfrentas las situaciones legales de tu vida diaria.
-            </p>
-
-            <p class="paragraph">
-                Durante mis años como docente, he visto cómo el desconocimiento de derechos básicos ha causado problemas innecesarios a muchas personas. Problemas que pudieron evitarse con información clara y oportuna. Por eso diseñé este curso: para darte las herramientas que necesitas, explicadas de forma que las puedas usar desde mañana mismo.
-            </p>
-
-            <h2 class="section-header">¿Por qué este curso es diferente?</h2>
-            
-            <p class="paragraph">
-                No vamos a memorizar leyes ni artículos. No te voy a abrumar con términos en latín ni conceptos abstractos. Este curso está diseñado para personas como tú: inteligentes, ocupadas y que necesitan respuestas prácticas a problemas reales.
-            </p>
-
-            <div class="highlight-section">
-                <h4>Imagina poder:</h4>
-                <ul class="highlight-list">
-                    <li>Leer un contrato y saber exactamente qué estás firmando</li>
-                    <li>Identificar cuándo te están tratando de engañar con "letra chiquita"</li>
-                    <li>Conocer a qué instituciones acudir cuando tengas un problema (y que te hagan caso)</li>
-                    <li>Calcular cuánto te deben pagar si te despiden</li>
-                    <li>Saber cuándo realmente necesitas un abogado y cuándo puedes resolver las cosas por tu cuenta</li>
-                    <li>Protegerte de fraudes y abusos comunes</li>
-                </ul>
-                <p style="margin-top: 1rem;"><strong>Todo esto lo aprenderás en solo 4 horas, con ejemplos reales y ejercicios que podrás aplicar inmediatamente.</strong></p>
-            </div>
-
-            <h2 class="section-header">¿Qué vamos a hacer juntos?</h2>
-
-            <div class="session-grid">
-                <div class="session-box">
-                    <h5>Primera Sesión</h5>
-                    <p class="session-date">9 de septiembre</p>
-                    <p>Vamos a construir tus cimientos legales. Te explicaré cómo funciona el sistema jurídico mexicano de manera tan simple que podrás explicárselo a tu abuela. Aprenderás a leer contratos como si fueran recetas de cocina y a identificar las trampas más comunes en documentos legales.</p>
-                </div>
-                <div class="session-box">
-                    <h5>Segunda Sesión</h5>
-                    <p class="session-date">11 de septiembre</p>
-                    <p>Aquí es donde la teoría cobra vida. Analizaremos casos reales: ese vecino ruidoso, el jefe que no paga, la tienda que no respeta la garantía, el banco que cobra de más. Simularemos una reclamación ante PROFECO y te enseñaré los trucos que uso yo mismo para resolver problemas legales cotidianos.</p>
-                </div>
-            </div>
-
-            <h2 class="section-header">Lo que necesitas para aprovechar al máximo el curso:</h2>
-
-            <ul class="requirements-list">
-                <li><strong>Tu computadora o dispositivo con buena conexión a internet</strong> - Las sesiones serán en videoconferencia y quiero que puedas participar sin interrupciones.</li>
-                <li><strong>Un cuaderno y pluma</strong> - Aunque compartiré todos los materiales digitalmente, tomar notas a mano ayuda a retener mejor la información.</li>
-                <li><strong>Algún contrato o documento legal que tengas</strong> (opcional) - Puede ser tu contrato de renta, de trabajo, de celular, lo que sea. Lo usaremos para ejercicios prácticos.</li>
-                <li><strong>Tus preguntas y dudas</strong> - No hay preguntas tontas. Si tú tienes una duda, probablemente otros también. Tu participación enriquece la experiencia de todos.</li>
-                <li><strong>Mente abierta y ganas de aprender</strong> - Vamos a derribar mitos y puede que descubras que algunas cosas que creías sobre el derecho no son ciertas.</li>
-            </ul>
-
-            <h2 class="section-header">Mi compromiso contigo:</h2>
-
-            <p class="paragraph">
-                <strong>Lenguaje claro:</strong> Nada de tecnicismos innecesarios. Si uso un término legal, lo explicaré con palabras normales.<br>
-                <strong>Casos reales:</strong> Todo lo que veamos tendrá aplicación práctica inmediata en tu vida.<br>
-                <strong>Atención personalizada:</strong> El grupo es pequeño precisamente para poder atender tus dudas específicas.<br>
-                <strong>Material de apoyo:</strong> Recibirás plantillas, formatos y guías que podrás usar después del curso.<br>
-                <strong>Disponibilidad:</strong> Al final del curso te daré mi correo para consultas rápidas posteriores.
-            </p>
-
-            <h2 class="section-header">Algunos consejos antes de empezar:</h2>
-
-            <p class="paragraph">
-                • Conéctate 5 minutos antes para probar tu audio y video<br>
-                • Ten a la mano agua o café - Serán 2 horas intensas pero entretenidas<br>
-                • Avisa en casa que estarás en clase para minimizar interrupciones<br>
-                • Si tienes alguna situación legal actual que te preocupa, anótala para comentarla en la sesión de preguntas
-            </p>
-
-            <div class="meeting-info">
-                <h4>¡Nos vemos pronto!</h4>
-                <p style="margin-bottom: 1rem;"><strong>📅 Primera sesión: Martes 9 de septiembre, 20:00 hrs</strong></p>
-                <a href="https://meet.jit.si/moderated/854f4c0ac074b4552d3078c2a646e8eb4e4fd9b3ba0706d263203faea75eab04" target="_blank" class="meeting-link">🔗 Acceder a la Videoconferencia</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">📧 Cualquier duda antes del curso: jorge_clemente@empirica.mx</p>
-            </div>
-
-            <div class="exercises-info">
-                <h4>📝 Plataforma de Evaluación y Ejercicios Prácticos</h4>
-                <p>Para recibir tu diploma con valor curricular, deberás completar los ejercicios de evaluación en nuestra plataforma en línea. Estos ejercicios prácticos y autocalificables están diseñados para reforzar lo aprendido durante el curso y demostrar tu comprensión de los conceptos clave.</p>
-                <p style="margin: 1rem 0;"><strong>La plataforma estará disponible durante y después del curso para que puedas practicar a tu ritmo.</strong></p>
-                <a href="https://jorch01.github.io/ejercicios.io/" target="_blank" class="exercises-link">Acceder a la Plataforma de Ejercicios</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem;"><em>Te explicaré todos los detalles sobre el uso de la plataforma durante nuestras sesiones.</em></p>
-            </div>
-
-            <h2 class="section-header">Una reflexión antes de comenzar:</h2>
-
-            <p class="paragraph">
-                El derecho no debería ser un privilegio de pocos, sino una herramienta de todos. En México, la mayoría de los problemas legales que enfrentamos son prevenibles si sabemos cómo protegernos. Mi misión en estas 4 horas es convertirte en un ciudadano más informado y empoderado.
-            </p>
-
-            <p class="paragraph">
-                No saldrás del curso convertido en abogado (para eso se necesitan años), pero sí saldrás con algo más valioso: la capacidad de identificar problemas legales antes de que se vuelvan crisis, y el conocimiento para tomar mejores decisiones en tu vida personal y profesional.
-            </p>
-
-            <p class="paragraph">
-                Prepárate para ver el mundo legal con nuevos ojos. Te prometo que después de este curso, nunca volverás a firmar un documento sin leerlo, y sabrás exactamente qué hacer cuando alguien intente abusar de tus derechos.
-            </p>
-
-            <div class="closing">
-                <p><strong>¡Nos vemos el martes!</strong></p>
-            </div>
-
-            <div class="signature-section">
-                <p>Con entusiasmo y compromiso,</p>
-                <div class="signature-name">Mtro. Jorge Israel Clemente Marié</div>
-                <div class="signature-title">Maestro en Amparo<br>Tu guía en el mundo del derecho práctico</div>
-            </div>
-
-            <div class="postscript">
-                <p><strong>P.D.</strong> Si conoces a alguien más que pudiera beneficiarse de este conocimiento, todavía hay algunos lugares disponibles. El conocimiento legal compartido nos hace a todos más fuertes como sociedad.</p>
-            </div>
-        </div>
-
-        <!-- Pie de página del documento -->
-        <footer class="document-footer">
-            <div class="quote">
-                "El conocimiento del derecho no te convierte en conflictivo, te convierte en precavido."
-            </div>
-            <p style="font-size: 0.9rem; opacity: 0.9;">
-                © 2024 Empírica Legal Lab | Cancún, Quintana Roo, México<br>
-                jorge_clemente@empirica.mx | www.empirica.mx
-            </p>
-        </footer>
-    </div>
-</body>
-</html>
+# CARTA DE BIENVENIDA
+
+**Curso: Derecho para No Abogados**  
+**Modalidad 100% En Línea | A Tu Ritmo**
+
+-----
+
+Estimado(a) participante:
+
+¡Bienvenido(a) al curso "Derecho para No Abogados"! Me da mucho gusto que hayas decidido invertir en algo que transformará la manera en que entiendes y enfrentas las situaciones legales de tu vida diaria.
+
+Mi nombre es Jorge Israel Clemente Marié y tendré el privilegio de ser tu guía en este viaje de descubrimiento del mundo jurídico. Pero antes de hablar del curso, déjame compartirte algo personal: durante mis años como docente, he visto cómo el desconocimiento de derechos básicos ha causado problemas innecesarios a muchas personas. Problemas que pudieron evitarse con información clara y oportuna. Por eso diseñé este curso: para darte las herramientas que necesitas, explicadas de forma que las puedas usar desde mañana mismo.
+
+## ¿Por qué este curso es diferente?
+
+No vamos a memorizar leyes ni artículos. No te voy a abrumar con términos en latín ni conceptos abstractos. Este curso está diseñado para personas como tú: inteligentes, ocupadas y que necesitan respuestas prácticas a problemas reales.
+
+Imagina poder:
+
+- Leer un contrato y saber exactamente qué estás firmando
+- Identificar cuándo te están tratando de engañar con "letra chiquita"
+- Conocer a qué instituciones acudir cuando tengas un problema (y que te hagan caso)
+- Calcular cuánto te deben pagar si te despiden
+- Saber cuándo realmente necesitas un abogado y cuándo puedes resolver las cosas por tu cuenta
+- Protegerte de fraudes y abusos comunes
+
+Todo esto lo aprenderás en aproximadamente 4 horas totales, con ejemplos reales y ejercicios que podrás aplicar inmediatamente.
+
+## ¿Cómo funciona el curso en línea?
+
+**Flexibilidad total:** A diferencia de cursos tradicionales con horarios fijos, este curso está diseñado para adaptarse a tu vida ocupada.
+
+**Contenido grabado de alta calidad:** Tendrás acceso a la clase completa grabada en video, donde explico todos los conceptos con casos reales y ejemplos prácticos.
+
+**Materiales complementarios:** Además del video principal, tendrás acceso a:
+- Presentación interactiva con 47 diapositivas
+- Formatos y plantillas descargables
+- Directorio de instituciones de apoyo
+- Casos de estudio detallados
+
+**Evaluación interactiva:** Para obtener tu diploma con valor curricular, completarás 13 ejercicios prácticos en nuestra plataforma en línea en: https://jorch01.github.io/ejercicios.io/
+
+## Lo que necesitas para aprovechar al máximo el curso:
+
+1. **Dispositivo con internet estable** - Puedes verlo en computadora, tablet o celular
+2. **Un cuaderno y pluma** - Aunque todo está digital, tomar notas a mano ayuda a retener mejor
+3. **Algún contrato o documento legal que tengas** (opcional) - Puede ser tu contrato de renta, de trabajo, de celular, lo que sea. Lo usaremos para ejercicios prácticos
+4. **Tus preguntas y dudas** - Durante el curso verás dónde contactarme si tienes consultas específicas
+5. **Mente abierta y ganas de aprender** - Vamos a derribar mitos y puede que descubras que algunas cosas que creías sobre el derecho no son ciertas
+
+## Mi compromiso contigo:
+
+- **Lenguaje claro:** Nada de tecnicismos innecesarios. Si uso un término legal, lo explicaré con palabras normales.
+- **Casos reales:** Todo lo que veamos tendrá aplicación práctica inmediata en tu vida.
+- **Contenido actualizado:** Incluye las reformas laborales más recientes, como la reforma de "Vacaciones Dignas" de 2023.
+- **Material de apoyo:** Recibirás plantillas, formatos y guías que podrás usar después del curso.
+- **Disponibilidad:** Al final del curso te daré mi correo para consultas rápidas posteriores.
+
+## Ventajas de la modalidad en línea:
+
+- **Ve a tu ritmo:** Pausa, rebobina, revisa las veces que necesites
+- **Horario flexible:** Estudia cuando mejor te convenga, 24/7
+- **Acceso permanente:** Podrás consultar el material siempre que lo necesites
+- **Comodidad:** Desde tu casa, oficina, o donde te sientes más cómodo
+- **Inversión accesible:** Solo $200 pesos mexicanos por acceso completo y diploma incluido
+
+## Una reflexión antes de comenzar:
+
+El derecho no debería ser un privilegio de pocos, sino una herramienta de todos. En México, la mayoría de los problemas legales que enfrentamos son prevenibles si sabemos cómo protegernos. Mi misión es convertirte en un ciudadano más informado y empoderado.
+
+No saldrás del curso convertido en abogado (para eso se necesitan años), pero sí saldrás con algo más valioso: la capacidad de identificar problemas legales antes de que se vuelvan crisis, y el conocimiento para tomar mejores decisiones en tu vida personal y profesional.
+
+## Cómo empezar:
+
+**💰 Inversión:** $200 pesos mexicanos (precio único)  
+**🌐 Acceso:** Inmediato después del pago  
+**📧 Soporte:** jorge_clemente@empirica.mx  
+**📱 Informes:** WhatsApp disponible para dudas específicas
+
+Una vez que te inscribas, recibirás inmediatamente:
+- Acceso completo al curso grabado
+- Materiales complementarios descargables
+- Instrucciones para completar tu evaluación
+- Información de contacto para consultas posteriores
+
+## Tu diploma profesional:
+
+Para recibir tu **Diploma Electrónico con Valor Curricular**, firmado electrónicamente por Empírica Legal Lab, será necesario completar los ejercicios de evaluación en nuestra plataforma en línea: https://jorch01.github.io/ejercicios.io/. Son ejercicios prácticos y autocalificables que reforzarán lo aprendido. La calificación mínima aprobatoria es del 60%.
+
+Prepárate para ver el mundo legal con nuevos ojos. Te prometo que después de este curso, nunca volverás a firmar un documento sin leerlo, y sabrás exactamente qué hacer cuando alguien intente abusar de tus derechos.
+
+¡Tu aprendizaje jurídico comienza ahora!
+
+Con entusiasmo y compromiso,
+
+**Mtro. Jorge Israel Clemente Marié**  
+*Maestro en Amparo*  
+*Tu guía en el mundo del derecho práctico*
+
+-----
+
+**P.D.** Si conoces a alguien más que pudiera beneficiarse de este conocimiento, comparte esta oportunidad. El conocimiento legal compartido nos hace a todos más fuertes como sociedad.
+
+**P.P.D.** El acceso al curso es inmediato y permanente. Una vez que te inscribas, podrás consultar el material las veces que necesites, convirtiéndolo en tu referencia legal personal de por vida.
+
+-----
+
+*"El conocimiento del derecho no te convierte en conflictivo, te convierte en precavido."*
