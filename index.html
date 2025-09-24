@@ -1,108 +1,553 @@
-# CARTA DE BIENVENIDA
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Bienvenida - Derecho para No Abogados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-**Curso: Derecho para No Abogados**  
-**Modalidad 100% En Línea | A Tu Ritmo**
+        :root {
+            --primary-color: #1A322C;
+            --primary-light: #2A4A3D;
+            --primary-dark: #0F1F1A;
+            --accent-color: #4A7C59;
+            --accent-light: #6B9C77;
+            --background: #F8FAF9;
+            --surface: #FFFFFF;
+            --text-primary: #1A322C;
+            --text-secondary: #5A6B65;
+            --text-light: #8A9B95;
+            --border: #E1E8E5;
+            --shadow: rgba(26, 50, 44, 0.1);
+            --shadow-dark: rgba(26, 50, 44, 0.2);
+        }
 
------
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: linear-gradient(135deg, var(--background) 0%, #F0F5F2 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-Estimado(a) participante:
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px var(--shadow-dark);
+            overflow: hidden;
+        }
 
-¡Bienvenido(a) al curso "Derecho para No Abogados"! Me da mucho gusto que hayas decidido invertir en algo que transformará la manera en que entiendes y enfrentas las situaciones legales de tu vida diaria.
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-Mi nombre es Jorge Israel Clemente Marié y tendré el privilegio de ser tu guía en este viaje de descubrimiento del mundo jurídico. Pero antes de hablar del curso, déjame compartirte algo personal: durante mis años como docente, he visto cómo el desconocimiento de derechos básicos ha causado problemas innecesarios a muchas personas. Problemas que pudieron evitarse con información clara y oportuna. Por eso diseñé este curso: para darte las herramientas que necesitas, explicadas de forma que las puedas usar desde mañana mismo.
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="80" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="40" cy="60" r="1" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
 
-## ¿Por qué este curso es diferente?
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
 
-No vamos a memorizar leyes ni artículos. No te voy a abrumar con términos en latín ni conceptos abstractos. Este curso está diseñado para personas como tú: inteligentes, ocupadas y que necesitan respuestas prácticas a problemas reales.
+        .brand-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
 
-Imagina poder:
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
 
-- Leer un contrato y saber exactamente qué estás firmando
-- Identificar cuándo te están tratando de engañar con "letra chiquita"
-- Conocer a qué instituciones acudir cuando tengas un problema (y que te hagan caso)
-- Calcular cuánto te deben pagar si te despiden
-- Saber cuándo realmente necesitas un abogado y cuándo puedes resolver las cosas por tu cuenta
-- Protegerte de fraudes y abusos comunes
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
 
-Todo esto lo aprenderás en aproximadamente 4 horas totales, con ejemplos reales y ejercicios que podrás aplicar inmediatamente.
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin: 10px 0;
+        }
 
-## ¿Cómo funciona el curso en línea?
+        .content {
+            padding: 50px 40px;
+        }
 
-**Flexibilidad total:** A diferencia de cursos tradicionales con horarios fijos, este curso está diseñado para adaptarse a tu vida ocupada.
+        .section {
+            margin-bottom: 40px;
+        }
 
-**Contenido grabado de alta calidad:** Tendrás acceso a la clase completa grabada en video, donde explico todos los conceptos con casos reales y ejemplos prácticos.
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent-color);
+            position: relative;
+        }
 
-**Materiales complementarios:** Además del video principal, tendrás acceso a:
-- Presentación interactiva con 47 diapositivas
-- Formatos y plantillas descargables
-- Directorio de instituciones de apoyo
-- Casos de estudio detallados
+        .section h3 {
+            color: var(--accent-color);
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-**Evaluación interactiva:** Para obtener tu diploma con valor curricular, completarás 13 ejercicios prácticos en nuestra plataforma en línea en: https://jorch01.github.io/ejercicios.io/
+        .section p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
 
-## Lo que necesitas para aprovechar al máximo el curso:
+        .intro-text {
+            font-size: 1.2em;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #E8F3EA 0%, #F0F8F2 100%);
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-color);
+        }
 
-1. **Dispositivo con internet estable** - Puedes verlo en computadora, tablet o celular
-2. **Un cuaderno y pluma** - Aunque todo está digital, tomar notas a mano ayuda a retener mejor
-3. **Algún contrato o documento legal que tengas** (opcional) - Puede ser tu contrato de renta, de trabajo, de celular, lo que sea. Lo usaremos para ejercicios prácticos
-4. **Tus preguntas y dudas** - Durante el curso verás dónde contactarme si tienes consultas específicas
-5. **Mente abierta y ganas de aprender** - Vamos a derribar mitos y puede que descubras que algunas cosas que creías sobre el derecho no son ciertas
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
 
-## Mi compromiso contigo:
+        .benefits-list li {
+            padding: 15px 20px;
+            margin: 10px 0;
+            background: var(--background);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 60px;
+        }
 
-- **Lenguaje claro:** Nada de tecnicismos innecesarios. Si uso un término legal, lo explicaré con palabras normales.
-- **Casos reales:** Todo lo que veamos tendrá aplicación práctica inmediata en tu vida.
-- **Contenido actualizado:** Incluye las reformas laborales más recientes, como la reforma de "Vacaciones Dignas" de 2023.
-- **Material de apoyo:** Recibirás plantillas, formatos y guías que podrás usar después del curso.
-- **Disponibilidad:** Al final del curso te daré mi correo para consultas rápidas posteriores.
+        .benefits-list li:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px var(--shadow);
+        }
 
-## Ventajas de la modalidad en línea:
+        .benefits-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 20px;
+            top: 15px;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
 
-- **Ve a tu ritmo:** Pausa, rebobina, revisa las veces que necesites
-- **Horario flexible:** Estudia cuando mejor te convenga, 24/7
-- **Acceso permanente:** Podrás consultar el material siempre que lo necesites
-- **Comodidad:** Desde tu casa, oficina, o donde te sientes más cómodo
-- **Inversión accesible:** Solo $200 pesos mexicanos por acceso completo y diploma incluido
+        .highlight-box {
+            background: linear-gradient(135deg, #FFF3CD 0%, #FFEAA7 100%);
+            border: 2px solid #F1C40F;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
 
-## Una reflexión antes de comenzar:
+        .highlight-box h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
 
-El derecho no debería ser un privilegio de pocos, sino una herramienta de todos. En México, la mayoría de los problemas legales que enfrentamos son prevenibles si sabemos cómo protegernos. Mi misión es convertirte en un ciudadano más informado y empoderado.
+        .highlight-box p {
+            color: #856404;
+            font-weight: 600;
+        }
 
-No saldrás del curso convertido en abogado (para eso se necesitan años), pero sí saldrás con algo más valioso: la capacidad de identificar problemas legales antes de que se vuelvan crisis, y el conocimiento para tomar mejores decisiones en tu vida personal y profesional.
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
 
-## Cómo empezar:
+        .requirement-card {
+            background: var(--surface);
+            border: 2px solid var(--border);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
 
-**💰 Inversión:** $200 pesos mexicanos (precio único)  
-**🌐 Acceso:** Inmediato después del pago  
-**📧 Soporte:** jorge_clemente@empirica.mx  
-**📱 Informes:** WhatsApp disponible para dudas específicas
+        .requirement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow);
+            border-color: var(--accent-color);
+        }
 
-Una vez que te inscribas, recibirás inmediatamente:
-- Acceso completo al curso grabado
-- Materiales complementarios descargables
-- Instrucciones para completar tu evaluación
-- Información de contacto para consultas posteriores
+        .requirement-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
 
-## Tu diploma profesional:
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
 
-Para recibir tu **Diploma Electrónico con Valor Curricular**, firmado electrónicamente por Empírica Legal Lab, será necesario completar los ejercicios de evaluación en nuestra plataforma en línea: https://jorch01.github.io/ejercicios.io/. Son ejercicios prácticos y autocalificables que reforzarán lo aprendido. La calificación mínima aprobatoria es del 60%.
+        .advantage-card {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-Prepárate para ver el mundo legal con nuevos ojos. Te prometo que después de este curso, nunca volverás a firmar un documento sin leerlo, y sabrás exactamente qué hacer cuando alguien intente abusar de tus derechos.
+        .advantage-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px var(--shadow-dark);
+        }
 
-¡Tu aprendizaje jurídico comienza ahora!
+        .advantage-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
 
-Con entusiasmo y compromiso,
+        .price-section {
+            background: linear-gradient(135deg, #D4EDDA 0%, #C3E6CB 100%);
+            border: 2px solid #28A745;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
 
-**Mtro. Jorge Israel Clemente Marié**  
-*Maestro en Amparo*  
-*Tu guía en el mundo del derecho práctico*
+        .price-section h3 {
+            color: #155724;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
------
+        .price {
+            font-size: 3em;
+            font-weight: 700;
+            color: #155724;
+            margin: 20px 0;
+        }
 
-**P.D.** Si conoces a alguien más que pudiera beneficiarse de este conocimiento, comparte esta oportunidad. El conocimiento legal compartido nos hace a todos más fuertes como sociedad.
+        .price-details {
+            color: #155724;
+            font-size: 1.1em;
+        }
 
-**P.P.D.** El acceso al curso es inmediato y permanente. Una vez que te inscribas, podrás consultar el material las veces que necesites, convirtiéndolo en tu referencia legal personal de por vida.
+        .contact-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
 
------
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
 
-*"El conocimiento del derecho no te convierte en conflictivo, te convierte en precavido."*
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 10px 0;
+        }
+
+        .contact-info strong {
+            color: var(--accent-light);
+        }
+
+        .footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .signature {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 30px;
+            padding: 20px;
+            border-left: 4px solid var(--accent-light);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-dark);
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .requirements-grid,
+            .advantages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <span class="brand-icon">⚖️</span>
+                <h1>CARTA DE BIENVENIDA</h1>
+                <p><strong>Curso: Derecho para No Abogados</strong></p>
+                <p>Modalidad 100% En Línea | A Tu Ritmo</p>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div class="intro-text">
+                <strong>Estimado(a) participante:</strong><br><br>
+                ¡Bienvenido(a) al curso "Derecho para No Abogados"! Me da mucho gusto que hayas decidido invertir en algo que transformará la manera en que entiendes y enfrentas las situaciones legales de tu vida diaria.
+            </div>
+
+            <div class="section">
+                <p>Mi nombre es <strong>Jorge Israel Clemente Marié</strong> y tendré el privilegio de ser tu guía en este viaje de descubrimiento del mundo jurídico. Durante mis años como docente, he visto cómo el desconocimiento de derechos básicos ha causado problemas innecesarios a muchas personas. Problemas que pudieron evitarse con información clara y oportuna. Por eso diseñé este curso: para darte las herramientas que necesitas, explicadas de forma que las puedas usar desde mañana mismo.</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🎯</span>¿Por qué este curso es diferente?</h2>
+                <p>No vamos a memorizar leyes ni artículos. No te voy a abrumar con términos en latín ni conceptos abstractos. Este curso está diseñado para personas como tú: inteligentes, ocupadas y que necesitan respuestas prácticas a problemas reales.</p>
+                
+                <h3><span class="emoji">💡</span>Imagina poder:</h3>
+                <ul class="benefits-list">
+                    <li>Leer un contrato y saber exactamente qué estás firmando</li>
+                    <li>Identificar cuándo te están tratando de engañar con "letra chiquita"</li>
+                    <li>Conocer a qué instituciones acudir cuando tengas un problema (y que te hagan caso)</li>
+                    <li>Calcular cuánto te deben pagar si te despiden</li>
+                    <li>Saber cuándo realmente necesitas un abogado y cuándo puedes resolver las cosas por tu cuenta</li>
+                    <li>Protegerte de fraudes y abusos comunes</li>
+                </ul>
+                
+                <p><strong>Todo esto lo aprenderás en aproximadamente 4 horas totales, con ejemplos reales y ejercicios que podrás aplicar inmediatamente.</strong></p>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">💻</span>¿Cómo funciona el curso en línea?</h2>
+                
+                <h3><span class="emoji">⏰</span>Flexibilidad total:</h3>
+                <p>A diferencia de cursos tradicionales con horarios fijos, este curso está diseñado para adaptarse a tu vida ocupada.</p>
+                
+                <h3><span class="emoji">🎥</span>Contenido grabado de alta calidad:</h3>
+                <p>Tendrás acceso a la clase completa grabada en video, donde explico todos los conceptos con casos reales y ejemplos prácticos.</p>
+                
+                <h3><span class="emoji">📚</span>Materiales complementarios:</h3>
+                <ul class="benefits-list">
+                    <li>Presentación interactiva con 47 diapositivas</li>
+                    <li>Formatos y plantillas descargables</li>
+                    <li>Directorio de instituciones de apoyo</li>
+                    <li>Casos de estudio detallados</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h3><span class="emoji">📱</span>Evaluación Interactiva</h3>
+                    <p>Para obtener tu diploma con valor curricular, completarás 13 ejercicios prácticos en nuestra plataforma en línea:</p>
+                    <p><strong>https://jorch01.github.io/ejercicios.io/</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">✅</span>Lo que necesitas para aprovechar al máximo el curso:</h2>
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <h4><span class="emoji">💻</span>Dispositivo con internet estable</h4>
+                        <p>Puedes verlo en computadora, tablet o celular</p>
+                    </div>
+                    <div class="requirement-card">
+                        <h4><span class="emoji">📝</span>Un cuaderno y pluma</h4>
+                        <p>Aunque todo está digital, tomar notas a mano ayuda a retener mejor</p>
+                    </div>
+                    <div class="requirement-card">
+                        <h4><span class="emoji">📋</span>Algún contrato o documento legal</h4>
+                        <p>(Opcional) Puede ser tu contrato de renta, de trabajo, de celular, lo que sea</p>
+                    </div>
+                    <div class="requirement-card">
+                        <h4><span class="emoji">🧠</span>Mente abierta y ganas de aprender</h4>
+                        <p>Vamos a derribar mitos y descubrir cosas nuevas sobre el derecho</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🤝</span>Mi compromiso contigo:</h2>
+                <ul class="benefits-list">
+                    <li><strong>Lenguaje claro:</strong> Nada de tecnicismos innecesarios</li>
+                    <li><strong>Casos reales:</strong> Todo tendrá aplicación práctica inmediata</li>
+                    <li><strong>Contenido actualizado:</strong> Incluye las reformas laborales más recientes</li>
+                    <li><strong>Material de apoyo:</strong> Plantillas, formatos y guías</li>
+                    <li><strong>Disponibilidad:</strong> Mi correo para consultas posteriores</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🌟</span>Ventajas de la modalidad en línea:</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <h4><span class="emoji">⏯️</span>Ve a tu ritmo</h4>
+                        <p>Pausa, rebobina, revisa las veces que necesites</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h4><span class="emoji">🕐</span>Horario flexible</h4>
+                        <p>Estudia cuando mejor te convenga, 24/7</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h4><span class="emoji">🔄</span>Acceso permanente</h4>
+                        <p>Consulta el material siempre que lo necesites</p>
+                    </div>
+                    <div class="advantage-card">
+                        <h4><span class="emoji">🏠</span>Comodidad total</h4>
+                        <p>Desde tu casa, oficina, o donde te sientes más cómodo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <h3><span class="emoji">💰</span>Inversión Accesible</h3>
+                <div class="price">$200</div>
+                <div class="price-details">
+                    <p><strong>Pesos mexicanos - Precio único</strong></p>
+                    <p>✓ Acceso completo y permanente</p>
+                    <p>✓ Diploma con valor curricular incluido</p>
+                    <p>✓ Todos los materiales complementarios</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">🚀</span>Cómo empezar:</h2>
+                <p>Una vez que te inscribas, recibirás inmediatamente:</p>
+                <ul class="benefits-list">
+                    <li>Acceso completo al curso grabado</li>
+                    <li>Materiales complementarios descargables</li>
+                    <li>Instrucciones para completar tu evaluación</li>
+                    <li>Información de contacto para consultas posteriores</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3><span class="emoji">🎓</span>Tu Diploma Profesional</h3>
+                <p>Para recibir tu <strong>Diploma Electrónico con Valor Curricular</strong>, firmado electrónicamente por Empírica Legal Lab, será necesario completar los ejercicios de evaluación en nuestra plataforma. Son ejercicios prácticos y autocalificables que reforzarán lo aprendido. <strong>Calificación mínima aprobatoria: 60%</strong></p>
+            </div>
+
+            <div class="section">
+                <p style="font-size: 1.2em; text-align: center; color: var(--primary-color); font-weight: 600;">
+                    Prepárate para ver el mundo legal con nuevos ojos. Te prometo que después de este curso, nunca volverás a firmar un documento sin leerlo, y sabrás exactamente qué hacer cuando alguien intente abusar de tus derechos.
+                </p>
+                <p style="text-align: center; font-size: 1.3em; font-weight: 700; color: var(--accent-color); margin-top: 30px;">
+                    ¡Tu aprendizaje jurídico comienza ahora!
+                </p>
+            </div>
+
+            <div class="contact-info">
+                <h3><span class="emoji">📞</span>Información de Contacto</h3>
+                <p><strong>📧 Email:</strong> jorge_clemente@empirica.mx</p>
+                <p><strong>📱 WhatsApp:</strong> Disponible para dudas específicas</p>
+                <p><strong>⏰ Horario de atención:</strong> Lunes a Viernes 9:00-18:00 hrs</p>
+            </div>
+
+            <div class="section">
+                <h2><span class="emoji">💭</span>Una reflexión antes de comenzar:</h2>
+                <p>El derecho no debería ser un privilegio de pocos, sino una herramienta de todos. En México, la mayoría de los problemas legales que enfrentamos son prevenibles si sabemos cómo protegernos. Mi misión es convertirte en un ciudadano más informado y empoderado.</p>
+                
+                <p>No saldrás del curso convertido en abogado (para eso se necesitan años), pero sí saldrás con algo más valioso: la capacidad de identificar problemas legales antes de que se vuelvan crisis, y el conocimiento para tomar mejores decisiones en tu vida personal y profesional.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Con entusiasmo y compromiso,</p>
+            <div class="signature">
+                <strong>Mtro. Jorge Israel Clemente Marié</strong><br>
+                <em>Maestro en Amparo</em><br>
+                <em>Tu guía en el mundo del derecho práctico</em>
+            </div>
+            
+            <hr style="margin: 30px 0; opacity: 0.3;">
+            
+            <p><strong>P.D.</strong> Si conoces a alguien más que pudiera beneficiarse de este conocimiento, comparte esta oportunidad. El conocimiento legal compartido nos hace a todos más fuertes como sociedad.</p>
+            
+            <p><strong>P.P.D.</strong> El acceso al curso es inmediato y permanente. Una vez que te inscribas, podrás consultar el material las veces que necesites, convirtiéndolo en tu referencia legal personal de por vida.</p>
+            
+            <div class="quote">
+                <span class="emoji">💡</span>"El conocimiento del derecho no te convierte en conflictivo, te convierte en precavido."
+            </div>
+        </div>
+    </div>
+</body>
+</html>
